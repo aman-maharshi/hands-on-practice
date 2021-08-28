@@ -28,4 +28,5 @@ const Button = styled.button`
         cursor: default;
     }
 `
+
 export { Button }

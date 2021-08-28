@@ -1,8 +1,8 @@
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import Login from "components/pages/Login"
 import Home from "components/pages/Home"
 
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -26,23 +26,12 @@ const GlobalStyle = createGlobalStyle`
         color: var(--heading-text);
         font-weight: bold;
         letter-spacing: 0.5px;
-    }
-`
+        text-decoration: none;
+        transition: 0.3s ease;
 
-const AppWrapper = styled.div`
-    padding: 1rem;
-    border: 1px solid lightgray;
-    width: 700px;
-    margin: 3rem auto 1rem;
-    position: relative;
-
-    h3 {
-        color: var(--heading-text);
-    }
-    .nav {
-        position: absolute;
-        right: 2rem;
-        top: 2rem;
+        &:hover {
+            background: #edefef;
+        }
     }
 `
 
@@ -50,24 +39,16 @@ function App() {
     return (
         <div>
             <GlobalStyle />
-            <AppWrapper>
-                <BrowserRouter>
-                    <Switch>
-                        <Route path="/login">
-                            <div className="nav">
-                                <Link to="/">Home</Link>
-                            </div>
-                            <Login />
-                        </Route>
-                        <Route path="/">
-                            <div className="nav">
-                                <Link to="/login">Login</Link>
-                            </div>
-                            <Home />
-                        </Route>
-                    </Switch>
-                </BrowserRouter>
-            </AppWrapper>
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+            </BrowserRouter>
         </div>
     )
 }
