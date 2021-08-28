@@ -1,6 +1,8 @@
-import { Button } from "components/common"
-import styled from "styled-components"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
+import Login from "components/pages/Login"
+import Home from "components/pages/Home"
+
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -19,6 +21,12 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+
+    a {
+        color: var(--heading-text);
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
 `
 
 const AppWrapper = styled.div`
@@ -26,9 +34,15 @@ const AppWrapper = styled.div`
     border: 1px solid lightgray;
     width: 700px;
     margin: 3rem auto 1rem;
+    position: relative;
 
     h3 {
         color: var(--heading-text);
+    }
+    .nav {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
     }
 `
 
@@ -37,9 +51,22 @@ function App() {
         <div>
             <GlobalStyle />
             <AppWrapper>
-                <h3>Hello there!</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dolorem fugiat veritatis excepturi maiores maxime accusantium molestiae quod qui natus!</p>
-                <Button>lorem</Button>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/login">
+                            <div className="nav">
+                                <Link to="/">Home</Link>
+                            </div>
+                            <Login />
+                        </Route>
+                        <Route path="/">
+                            <div className="nav">
+                                <Link to="/login">Login</Link>
+                            </div>
+                            <Home />
+                        </Route>
+                    </Switch>
+                </BrowserRouter>
             </AppWrapper>
         </div>
     )
