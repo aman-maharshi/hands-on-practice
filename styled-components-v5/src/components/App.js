@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components"
-import Login from "components/pages/Login"
+import Projects from "components/pages/Projects"
+import Blog from "components/pages/Blog"
 import Home from "components/pages/Home"
 
 import { BrowserRouter, Switch, Route } from "react-router-dom"
@@ -41,8 +42,11 @@ function App() {
             <GlobalStyle />
             <BrowserRouter>
                 <Switch>
-                    <Route path="/login">
-                        <Login />
+                    <Route path="/projects">
+                        <Projects />
+                    </Route>
+                    <Route path="/blog">
+                        <Blog />
                     </Route>
                     <Route path="/">
                         <Home />
