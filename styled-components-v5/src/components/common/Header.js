@@ -1,12 +1,14 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { Link, useLocation } from "react-router-dom"
+import { Toggle } from "./Toggle"
 
 const HeaderWrapper = styled.div`
-    border-bottom: 3px solid #efefef;
+    border-bottom: 3px solid ${props => props.theme.grayBorder};
     display: flex;
     position: relative;
     padding: 0 2rem;
+    background: ${props => props.theme.whiteBg};
 
     @media (max-width: 576px) {
         padding: 0;
@@ -41,14 +43,14 @@ const HeaderWrapper = styled.div`
             transform: translateX(100%);
             width: 100%;
             flex-direction: column;
-            border-bottom: 3px solid #efefef;
+            border-bottom: 3px solid ${props => props.theme.grayBorder};
         }
     }
 
     nav.show {
         @media (max-width: 576px) {
             transform: translateX(0);
-            background: #f7f7f7;
+            background: ${props => props.theme.grayBg};
         }
     }
 
@@ -81,12 +83,12 @@ const HeaderWrapper = styled.div`
         text-transform: uppercase;
 
         a {
-            background: var(--light-blue);
+            color: ${props => props.theme.lightBlue};
         }
     }
 `
 
-const Header = () => {
+const Header = ({ toggleState, setToggleState }) => {
     const [showMobileMenu, setShowMobileMenu] = useState(false)
     const { pathname } = useLocation()
     return (
@@ -100,6 +102,8 @@ const Header = () => {
                 </Link>
             </div>
             <nav className={showMobileMenu ? "show" : null}>
+                <Toggle toggleState={toggleState} setToggleState={setToggleState} />
+
                 <div className={pathname === "/blog" ? "nav-item nav-item-active" : "nav-item"}>
                     <Link to="/blog">Blog</Link>
                 </div>
