@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Lato";
+    src: url("/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "Lato";
+    src: url("/fonts/OpenSans-Bold.ttf");
+    font-weight: bold;
+}
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+main {
+    max-width: 1000px;
+    margin: 4rem auto 0 auto;
+}
+
+.container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.header img {
+    border-radius: 50%;
+    margin-right: 2rem;
+}
