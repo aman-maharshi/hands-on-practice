@@ -48,3 +48,25 @@ a {
 .card__desc {
     color: #484848;
 }
+
+/*
+    SKELETON LOADING ANIMATION
+--------------------------------*/
+
+/*
+    IMAGE SKELETON ANIMATION
+*/
+
+.skeleton {
+    opacity: 0.7;
+    animation: skeleton-animation 1s linear infinite alternate;
+}
+
+@keyframes skeleton-animation {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
