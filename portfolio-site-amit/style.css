@@ -14,7 +14,7 @@ body {
 ----------------*/
 .header--home {
     height: 100vh;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(/img/cover.jpg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(img/cover.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
