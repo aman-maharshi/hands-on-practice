@@ -1,0 +1,44 @@
+/*
+  NAV
+----------*/
+.nav {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #262729;
+    background: var(--bg-darkgray);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.nav__items {
+    display: flex;
+}
+.nav__items a {
+    margin: 0 1rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.85rem;
+}
+.nav__items a:hover {
+    color: white;
+}
+
+/*
+  FOOTER
+-------------*/
+.footer {
+    padding: 1rem;
+    text-align: center;
+    background: var(--bg-darkgray);
+}
+.footer a {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+.footer a:hover {
+    color: white;
+}
