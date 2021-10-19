@@ -11,7 +11,7 @@ export default function Contact() {
             </Head>
 
             <main className={stylesHome.main}>
-                <h1>Contact</h1>
+                <h1 className={stylesHome.pageTitle}>Contact</h1>
             </main>
         </>
     )

@@ -11,7 +11,7 @@ export default function About() {
             </Head>
 
             <main className={stylesHome.main}>
-                <h1>About</h1>
+                <h1 className={stylesHome.pageTitle}>About</h1>
             </main>
         </>
     )

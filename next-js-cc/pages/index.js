@@ -1,7 +1,7 @@
 import Head from "next/head"
 import stylesHome from "../styles/Home.module.css"
 
-export default function Home() {
+export default function Home({ fetchedData }) {
     return (
         <>
             <Head>
@@ -11,8 +11,34 @@ export default function Home() {
             </Head>
 
             <main className={stylesHome.main}>
-                <h1>Home</h1>
+                <h1 className={stylesHome.pageTitle}>Blog</h1>
+                <div className={stylesHome.blogWrapper}>
+                    {fetchedData.map(item => {
+                        return (
+                            <div key={item.id} className={stylesHome.blog}>
+                                <h3>{item.title.substring(0, 20)}</h3>
+                                <p className={stylesHome.blogDesc}>{item.body}</p>
+                            </div>
+                        )
+                    })}
+                </div>
             </main>
         </>
     )
+}
+
+/*
+    getStaticProps - fetch data at build time
+    getServerSideProps - fetch data on every request
+    getStaticPaths - to dynamically generate paths based on the data we're fetching
+*/
+
+export const getStaticProps = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=6")
+    const fetchedData = await response.json()
+    return {
+        props: {
+            fetchedData
+        }
+    }
 }

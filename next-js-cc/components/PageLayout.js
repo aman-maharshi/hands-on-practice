@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import stylesLayout from "../styles/Layout.module.css"
 
 const PageLayout = ({ children }) => {
@@ -7,13 +8,13 @@ const PageLayout = ({ children }) => {
             <div className={stylesLayout.nav}>
                 <ul className={stylesLayout.nav__items}>
                     <li>
-                        <a href="/">Home</a>
+                        <Link href="/">Home</Link>
                     </li>
                     <li>
-                        <a href="/about">About</a>
+                        <Link href="/about">About</Link>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <Link href="/contact">Contact</Link>
                     </li>
                 </ul>
             </div>

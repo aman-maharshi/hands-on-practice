@@ -3,3 +3,28 @@
     margin-top: 80px;
     min-height: 84vh;
 }
+.pageTitle {
+    text-align: center;
+}
+
+/*
+    BLOG
+-----------*/
+
+.blogWrapper {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+}
+.blog {
+    padding: 1rem;
+    background: #2c2e30;
+}
+.blogDesc {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
