@@ -1,7 +1,7 @@
 import Head from "next/head"
-import stylesHome from "../styles/Home.module.css"
+import Home from "../components/Home"
 
-export default function Home({ fetchedData }) {
+const HomePage = ({ fetchedData }) => {
     return (
         <>
             <Head>
@@ -10,26 +10,14 @@ export default function Home({ fetchedData }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={stylesHome.main}>
-                <h1 className={stylesHome.pageTitle}>Blog</h1>
-                <div className={stylesHome.blogWrapper}>
-                    {fetchedData.map(item => {
-                        return (
-                            <div key={item.id} className={stylesHome.blog}>
-                                <h3>{item.title.substring(0, 20)}</h3>
-                                <p className={stylesHome.blogDesc}>{item.body}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-            </main>
+            <Home data={fetchedData} />
         </>
     )
 }
 
 /*
     getStaticProps - fetch data at build time
-    getServerSideProps - fetch data on every request
+    getServerSideProps - fetch data on request
     getStaticPaths - to dynamically generate paths based on the data we're fetching
 */
 
@@ -42,3 +30,5 @@ export const getStaticProps = async () => {
         }
     }
 }
+
+export default HomePage
