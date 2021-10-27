@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap");
+body {
+    margin: 0;
+    font-family: "Zen Antique", serif;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    font-size: 1rem;
+    color: rgb(56, 56, 56);
+}
+.form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+.form input,
+.form button {
+    font-size: 1rem;
+    padding: 5px;
+    font-family: "Zen Antique", serif;
+    border: 1px solid lightgray;
+    color: rgb(56, 56, 56);
+}
+.form input {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 200px;
+}
+.form button {
+    width: 65px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
+}
+.list {
+    margin: 0;
+    padding: 0;
+}
+.list li {
+    margin: 5px 0;
+    padding: 5px;
+    list-style: none;
+    display: flex;
+    border-radius: 5px;
+}
+.list li:nth-child(odd) {
+    background: #efefef;
+}
+.close {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.editBtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
