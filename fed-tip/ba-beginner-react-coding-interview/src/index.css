@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 1rem;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    margin-top: 2rem;
+}
+.userData {
+    width: 500px;
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    margin: 5px;
+}
+.right {
+    display: flex;
+    align-items: center;
+}
+.loadMore {
+    margin-top: 1rem;
+    cursor: pointer;
+}
