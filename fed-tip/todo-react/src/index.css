@@ -26,6 +26,7 @@ body {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     width: 200px;
+    padding: 5px 10px;
 }
 .form button {
     width: 65px;
@@ -47,7 +48,7 @@ body {
 .list li:nth-child(odd) {
     background: #efefef;
 }
-.close {
+.deleteBtn {
     border: none;
     background: none;
     cursor: pointer;
