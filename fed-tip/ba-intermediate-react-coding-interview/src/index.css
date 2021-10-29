@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 1rem;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.wrapper {
+    margin-top: 2rem;
+}
+
+.wrapper table,
+th,
+td {
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+.wrapper table {
+    border-collapse: collapse;
+    padding: 0;
+}
+.wrapper td {
+    word-break: break-all;
+}
