@@ -9,27 +9,30 @@ const App = () => {
 
     const getKeyValue = data => {
         if (typeof data === "object") {
-            return flattenObject(data)
-        } else if (typeof data === "string") {
+            return flatten(data).join(", ")
+        } else {
             return data
         }
     }
 
-    const flattenObject = obj => {
+    //TODO: fix this function
+    const flatten = inputObj => {
         const result = []
-        Object.keys(obj).forEach(item => {
-            if (typeof obj[item] === "string") {
-                result.push(obj[item])
+        Object.keys(inputObj).forEach(key => {
+            if (typeof inputObj[key] === "object") {
+                console.log(inputObj[key])
+                result.push("_")
             } else {
-                result.push("____")
+                result.push(inputObj[key])
             }
         })
-        return result.join(", ")
+        return result
     }
 
     const getData = async () => {
         try {
-            const apiResponse = await fetch("https://randomuser.me/api/?results=20")
+            // const apiResponse = await fetch("https://randomuser.me/api/?results=20")
+            const apiResponse = await fetch("https://randomuser.me/api/")
             const apiData = await apiResponse.json()
             setData(apiData.results)
         } catch (e) {
