@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+.page-title {
+    text-align: center;
+}
+
+.signup__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+.signup__form {
+    display: flex;
+}
+.signup__form input,
+button {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #cbcbcb;
+    border-radius: 3px;
+}
+.signup__form input {
+    margin-bottom: 1rem;
+}
+.signup__form button {
+    cursor: pointer;
+}
+
+.login__form {
+    padding: 1rem;
+    margin: 1rem auto 3rem auto;
+    background: #efefef;
+    display: flex;
+    justify-content: flex-end;
+}
+.login__form * {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #cbcbcb;
+    border-radius: 3px;
+}
