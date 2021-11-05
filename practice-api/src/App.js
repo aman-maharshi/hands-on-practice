@@ -5,19 +5,28 @@ import NotFound from "./components/NotFound"
 
 function App() {
     return (
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                    <Login />
-                </Route>
-                <Route path="/user/:id">
-                    <Home />
-                </Route>
-                <Route>
-                    <NotFound />
-                </Route>
-            </Switch>
-        </Router>
+        <>
+            <div className="mainContent">
+                <Router>
+                    <Switch>
+                        <Route exact path="/">
+                            <Login />
+                        </Route>
+                        <Route path="/user/:id">
+                            <Home />
+                        </Route>
+                        <Route>
+                            <NotFound />
+                        </Route>
+                    </Switch>
+                </Router>
+            </div>
+            <footer className="footer">
+                <p>
+                    Designed and Coded by <a href="https://amanmaharshi.com">Aman Maharshi</a>
+                </p>
+            </footer>
+        </>
     )
 }
 
