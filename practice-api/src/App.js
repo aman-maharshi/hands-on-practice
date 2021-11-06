@@ -1,11 +1,16 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Login from "./components/Login"
 import Home from "./components/Home"
 import NotFound from "./components/NotFound"
 
 function App() {
-    const [loginResponse, setLoginResponse] = useState(null)
+    const lsLoginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+    const [loginResponse, setLoginResponse] = useState(lsLoginResponse ? lsLoginResponse : null)
+
+    useEffect(() => {
+        localStorage.setItem("loginResponse", JSON.stringify(loginResponse))
+    }, [loginResponse])
 
     return (
         <>

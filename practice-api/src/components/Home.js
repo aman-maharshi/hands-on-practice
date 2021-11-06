@@ -1,10 +1,8 @@
 import React from "react"
-import { Link } from "react-router-dom"
-// import { useParams } from "react-router-dom"
-import { useHistory } from "react-router-dom"
+import { Link, useParams, useHistory } from "react-router-dom"
 
 function Home({ loginResponse, setLoginResponse }) {
-    // let { id } = useParams()
+    let { id } = useParams()
     let history = useHistory()
 
     const handleLogout = () => {
@@ -14,7 +12,7 @@ function Home({ loginResponse, setLoginResponse }) {
 
     return (
         <>
-            {loginResponse ? (
+            {loginResponse && id === loginResponse.username ? (
                 <div className="home">
                     <header className="header">
                         <div className="home__card">
