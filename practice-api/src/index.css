@@ -40,6 +40,14 @@ button {
 }
 .signup__form button {
     cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+}
+.signup__form button img {
+    height: 100%;
 }
 
 /*
