@@ -1,19 +1,22 @@
+import { useState } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Login from "./components/Login"
 import Home from "./components/Home"
 import NotFound from "./components/NotFound"
 
 function App() {
+    const [loginResponse, setLoginResponse] = useState(null)
+
     return (
         <>
-            <div className="mainContent">
+            <div className="appWrapper">
                 <Router>
                     <Switch>
                         <Route exact path="/">
-                            <Login />
+                            <Login setLoginResponse={setLoginResponse} />
                         </Route>
                         <Route path="/user/:id">
-                            <Home />
+                            <Home loginResponse={loginResponse} setLoginResponse={setLoginResponse} />
                         </Route>
                         <Route>
                             <NotFound />

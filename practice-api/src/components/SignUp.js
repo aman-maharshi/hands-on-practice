@@ -3,7 +3,6 @@ import axios from "axios"
 
 function SignUp() {
     const [userDetails, setUserDetails] = useState({ username: "", email: "", password: "" })
-    const [signUpResponse, setSignUpResponse] = useState(null)
     const [message, setMessage] = useState("")
     const [loading, setLoading] = useState(false)
 
@@ -22,23 +21,19 @@ function SignUp() {
         })
     }
 
-    const handleFormSubmit = e => {
+    const handleFormSubmit = async e => {
         e.preventDefault()
 
         if (userDetails.username && userDetails.email && userDetails.password) {
             setLoading(true)
-            axios
-                .post("http://localhost:8080/register", userDetails)
-                .then(function(response) {
-                    setSignUpResponse(response.data)
-                    setMessage("SignUp Successful")
-                    setLoading(false)
-                })
-                .catch(function(error) {
-                    // console.log(error.response)
-                    setMessage("Unable to SignUp!")
-                    setLoading(false)
-                })
+            try {
+                await axios.post("http://localhost:8080/register", userDetails)
+                setMessage("SignUp Successful")
+                setLoading(false)
+            } catch (e) {
+                setMessage("Unable to SignUp!")
+                setLoading(false)
+            }
         }
 
         setUserDetails({ username: "", email: "", password: "" })
@@ -49,7 +44,7 @@ function SignUp() {
             <input value={userDetails.username} onChange={handleInputChange} type="text" name="username" placeholder="username" />
             <input value={userDetails.email} onChange={handleInputChange} type="email" name="email" placeholder="email" />
             <input value={userDetails.password} onChange={handleInputChange} type="password" name="password" placeholder="password" />
-            <button type="submit">Sign Up {loading && <img src="/spinner.gif" />}</button>
+            <button type="submit">Sign Up {loading && <img src="/spinner.gif" alt="spinner" />}</button>
             <p className="message">{message}</p>
         </form>
     )
