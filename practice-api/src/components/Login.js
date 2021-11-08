@@ -21,14 +21,16 @@ function Login({ setLoginResponse }) {
                 const response = await axios.post("http://localhost:8080/login", loginDetails)
                 if (response.data) {
                     setLoginResponse(response.data)
+                    setLoginDetails({ username: "", password: "" })
                     history.push(`user/${loginDetails.username}`)
                 } else {
                     console.log("Incorrect username / password")
+                    setLoginDetails({ username: "", password: "" })
                 }
             } catch (e) {
                 console.log("Unable to login")
+                setLoginDetails({ username: "", password: "" })
             }
-            setLoginDetails({ username: "", password: "" })
         }
     }
 

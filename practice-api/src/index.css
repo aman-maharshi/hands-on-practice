@@ -8,22 +8,15 @@ body {
 }
 * {
     box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 a {
     color: black;
     text-decoration: none;
 }
-button {
-    cursor: pointer;
-    background: #0095f6;
-    color: white;
-    border: none;
-}
-button a {
-    color: white;
-}
-input {
+input,
+textarea {
     background: #fafafa;
 }
 .page-title {
@@ -40,11 +33,42 @@ input {
     border-radius: 3px;
     margin-top: 2rem;
     border: 1px solid #dbdbdb;
+    line-height: 1.25;
+}
+.pageContent--noBg {
+    background: none;
+    padding: 0;
+    border: 0;
 }
 .notLoggedIn {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+}
+
+/*
+    BUTTONS
+--------------*/
+.button-wrapper-right {
+    display: flex;
+    justify-content: flex-end;
+}
+button {
+    cursor: pointer;
+    background: #0095f6;
+    color: white;
+    border: none;
+}
+button.close {
+    background: none;
+    color: gray;
+    font-size: 1.25rem;
+}
+button.secondary {
+    background: gray;
+}
+button a {
+    color: white;
 }
 
 /*
@@ -59,8 +83,8 @@ input {
 }
 
 /*
-    SIGNUP
---------------*/
+    SIGNUP & CREATEP POST FORM
+--------------------------------*/
 
 .signup__form {
     display: flex;
@@ -72,12 +96,17 @@ input {
     display: flex;
 }
 .signup__form input,
-button {
+button,
+textarea {
     font-size: 1rem;
     padding: 10px;
     border-radius: 3px;
 }
 .signup__form input {
+    margin-bottom: 1rem;
+    border: 1px solid #dbdbdb;
+}
+.signup__form textarea {
     margin-bottom: 1rem;
     border: 1px solid #dbdbdb;
 }
